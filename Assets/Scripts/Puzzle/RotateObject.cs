@@ -74,5 +74,4 @@ public class RotateObject : MonoBehaviour
     {
         objectRotated = tr;
     }
-
 }
