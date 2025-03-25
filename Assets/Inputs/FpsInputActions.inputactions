@@ -18,7 +18,7 @@
                     "name": "Look",
                     "type": "Value",
                     "id": "88654190-03ad-4a0e-a017-4b640be74fd0",
-                    "expectedControlType": "Axis",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -82,8 +82,8 @@
                 },
                 {
                     "name": "",
-                    "id": "ac3aa2df-3b67-4f15-b241-fe7144cf552b",
-                    "path": "<Mouse>/delta/x",
+                    "id": "676ef02f-0f9a-4228-8c82-35386cc42945",
+                    "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

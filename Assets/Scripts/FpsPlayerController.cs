@@ -1,19 +1,20 @@
-using System;
 using JetBrains.Annotations;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class FpsPlayerController : MonoBehaviour
 {
     [SerializeField] private CharacterController m_cc;
-
+    [SerializeField] private CinemachineCamera m_camera;
+    
     private float m_moveSpeed = 10.0f;
     private float m_lookSensitivity = 0.25f;
     
     private Vector2 m_walkInput;
-    private float m_lookInput;
+    private Vector2 m_lookInput;
 
-    private float m_rotation;
+    private Vector2 m_viewDirection;
     
     [UsedImplicitly]
     public void OnWalk(InputValue value)
@@ -23,12 +24,15 @@ public class FpsPlayerController : MonoBehaviour
     
     public void OnLook(InputValue value)
     {
-        m_lookInput = value.Get<float>();
-        m_rotation += m_lookInput * m_lookSensitivity;
+        m_lookInput = value.Get<Vector2>();
+        m_viewDirection += m_lookInput * m_lookSensitivity;
     }
 
     public void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        
         transform.rotation = Quaternion.LookRotation(Vector3.forward, Vector3.up);
     }
 
@@ -37,6 +41,7 @@ public class FpsPlayerController : MonoBehaviour
         Vector3 walkDirection = new Vector3(m_walkInput.x, 0, m_walkInput.y);
         m_cc.Move(transform.rotation * walkDirection * (m_moveSpeed * Time.deltaTime));
         
-        transform.rotation = Quaternion.Euler(0, m_rotation, 0);
+        transform.rotation = Quaternion.Euler(0, m_viewDirection.x, 0);
+        m_camera.transform.localRotation = Quaternion.Euler(-m_viewDirection.y, 0, 0);
     }
 }
