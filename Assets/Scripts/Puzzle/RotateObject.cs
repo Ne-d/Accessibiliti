@@ -51,10 +51,10 @@ public class RotateObject : MonoBehaviour
         _smoothedRotation.x = Mathf.SmoothDamp(_smoothedRotation.x, _rotateInput.x, ref _currentVelocity.x, _rotateInput.sqrMagnitude > 0.01f ? accelerationTime : decelerationTime);
         _smoothedRotation.y = Mathf.SmoothDamp(_smoothedRotation.y, _rotateInput.y, ref _currentVelocity.y, _rotateInput.sqrMagnitude > 0.01f ? accelerationTime : decelerationTime);
 
-        // Appliquer la rotation accumulée progressivement
+        // Appliquer la rotation accumulï¿½e progressivement
         _currentRotation = Quaternion.Euler(_smoothedRotation.y * Time.deltaTime, -_smoothedRotation.x * Time.deltaTime, 0f) * objectRotated.rotation;
 
-        // Mise à jour de la rotation de l'objet
+        // Mise ï¿½ jour de la rotation de l'objet
         objectRotated.rotation = _currentRotation;
     }
 
