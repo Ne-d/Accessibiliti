@@ -5,6 +5,7 @@ public class FinishPuzzle : MonoBehaviour
     [SerializeField] private LayerMask finishLayerMask;
     [SerializeField] private RotateObject scriptRotateObject;
     [SerializeField] private float distanceRay = 5;
+    [SerializeField] private ParticleSystem successParticles;
 
     private RaycastHit hit;
     private bool _shootRay = true;
@@ -23,7 +24,9 @@ public class FinishPuzzle : MonoBehaviour
 
     private void HitGoodRotation()
     {
+        Transform parentObj = hit.collider.transform.parent;
+        Instantiate(successParticles, parentObj.position, Quaternion.identity);
         scriptRotateObject.ChangeObjectRotated(null);
-        hit.collider.transform.parent.GetComponent<GoodRotation>().SmoothRotate();
+        parentObj.GetComponent<GoodRotation>().SmoothRotate();
     }
 }

@@ -5,13 +5,19 @@ public class GoodRotation : MonoBehaviour
 {
     [SerializeField] private Transform objectTransform;
     [SerializeField] private Quaternion finalRotation;
-    [SerializeField] private float rotationDuration = 1f; // Durée de l'animation en secondes
+    [SerializeField] private Quaternion startRotation;
+    [SerializeField] private float rotationDuration = 1f;
 
-    private bool _isRotating = false; // Empêche le lancement de plusieurs coroutines en même temps
+    private bool _isRotating = false;
+
+    private void Awake()
+    {
+        objectTransform.rotation = startRotation;
+    }
 
     public void SmoothRotate()
     {
-        if (!_isRotating) // Vérifie qu'une rotation n'est pas déjà en cours
+        if (!_isRotating)
         {
             StartCoroutine(RotateOverTime(rotationDuration));
         }
