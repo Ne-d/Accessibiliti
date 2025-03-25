@@ -20,7 +20,8 @@ public class RotateObject : MonoBehaviour
 
     private void Update()
     {
-        SmoothRotationMovement();
+        if(objectRotated != null)
+            SmoothRotationMovement();
     }
 
     public void OnRotate(InputAction.CallbackContext context)
@@ -53,4 +54,8 @@ public class RotateObject : MonoBehaviour
         objectRotated.rotation = _targetRotation;
     }
 
+    public void ChangeObjectRotated(Transform tr)
+    {
+        objectRotated = tr;
+    }
 }
