@@ -286,9 +286,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01ce69bd15ad43a4386ad5776c8ae04a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 635741145}
   objectRotated: {fileID: 1605449952}
-  rotationSpeed: 1
+  maxRotationSpeed: 100
+  accelerationTime: 0.1
+  decelerationTime: 0.1
 --- !u!4 &659390944
 Transform:
   m_ObjectHideFlags: 0
