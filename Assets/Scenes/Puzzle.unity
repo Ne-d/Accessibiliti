@@ -468,7 +468,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 4
+      scalar: 3
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -853,7 +853,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 41.46, y: 27, z: 10}
+    m_Scale: {x: 35.93, y: 24.7, z: 10}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -4995,7 +4995,7 @@ Transform:
   m_GameObject: {fileID: 1038180277}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5130,18 +5130,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2653363500816065441, guid: 503cfa786c80cdd4c9307ea1639c0ac9, type: 3}
-      propertyPath: puzzles.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2653363500816065441, guid: 503cfa786c80cdd4c9307ea1639c0ac9, type: 3}
-      propertyPath: 'puzzles.Array.data[0]'
-      value: 
-      objectReference: {fileID: 1873043075650321604, guid: 0ebe3bde564a942489121e32ae4aedf2, type: 3}
-    - target: {fileID: 2653363500816065441, guid: 503cfa786c80cdd4c9307ea1639c0ac9, type: 3}
-      propertyPath: 'puzzles.Array.data[1]'
-      value: 
-      objectReference: {fileID: 1873043075650321604, guid: 0ebe3bde564a942489121e32ae4aedf2, type: 3}
     - target: {fileID: 2783458899993696504, guid: 503cfa786c80cdd4c9307ea1639c0ac9, type: 3}
       propertyPath: m_Name
       value: PlayerPuzzle
