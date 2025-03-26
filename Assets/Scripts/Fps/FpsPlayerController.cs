@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class FpsPlayerController : MonoBehaviour
 {
