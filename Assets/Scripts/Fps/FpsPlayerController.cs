@@ -7,6 +7,8 @@ public class FpsPlayerController : MonoBehaviour
 {
     [SerializeField] private CharacterController m_cc;
     [SerializeField] private CinemachineCamera m_camera;
+    [SerializeField] private GameObject m_bulletPrefab;
+    [SerializeField] private Transform m_shootTransform;
     
     private float m_moveSpeed = 10.0f;
     private float m_lookSensitivity = 0.25f;
@@ -22,6 +24,7 @@ public class FpsPlayerController : MonoBehaviour
         m_walkInput = value.Get<Vector2>();
     }
     
+    [UsedImplicitly]
     public void OnLook(InputValue value)
     {
         m_lookInput = value.Get<Vector2>();
@@ -43,5 +46,11 @@ public class FpsPlayerController : MonoBehaviour
         
         transform.rotation = Quaternion.Euler(0, m_viewDirection.x, 0);
         m_camera.transform.localRotation = Quaternion.Euler(-m_viewDirection.y, 0, 0);
+    }
+
+    [UsedImplicitly]
+    private void OnShoot()
+    {
+        Instantiate(m_bulletPrefab, m_shootTransform.position, m_camera.transform.rotation);
     }
 }
