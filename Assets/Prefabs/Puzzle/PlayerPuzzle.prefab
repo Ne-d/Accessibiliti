@@ -67,8 +67,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectRotated: {fileID: 0}
-  rotationSpeedKey: 100
-  rotationSpeedMouse: 50
+  rotationSpeedKey: 60
+  rotationSpeedMouse: 40
   accelerationTime: 0.1
   decelerationTime: 0.1
 --- !u!114 &5349281303729649970
@@ -170,13 +170,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puzzles:
-  - {fileID: 1873043075650321604, guid: 0ebe3bde564a942489121e32ae4aedf2, type: 3}
+  - {fileID: 3056976714864930589, guid: 92a13233e11a0f74bb74f0556c914324, type: 3}
   - {fileID: 6556483053052964745, guid: 2d98ce318d688c440a0a1e3bee3342ae, type: 3}
   - {fileID: 2047309983359392401, guid: 1df4f9ec21c536040ac6a886ddd6008b, type: 3}
   - {fileID: 2979854358331363361, guid: bb793a3455ddb554b96e180ea48154ed, type: 3}
   delaySwitchPuzzle: 3
   delayScaling: 1
   rotateObj: {fileID: 3114916256220707280}
+  remapMat: {fileID: 0}
 --- !u!1 &8110273949289336215
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,6 +190,7 @@ GameObject:
   - component: {fileID: 7287380785136894320}
   - component: {fileID: 2576960486133220813}
   - component: {fileID: 4767881228286951299}
+  - component: {fileID: 1725978244007796061}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -293,7 +295,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -314,3 +316,20 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &1725978244007796061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8110273949289336215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 97c955fdd0296c04f9ac575de8a5a113, type: 2}
