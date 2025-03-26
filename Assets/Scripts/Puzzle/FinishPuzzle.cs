@@ -1,11 +1,12 @@
+using System.Collections;
 using UnityEngine;
 
 public class FinishPuzzle : MonoBehaviour
 {
     [SerializeField] private LayerMask finishLayerMask;
-    [SerializeField] private RotateObject scriptRotateObject;
     [SerializeField] private float distanceRay = 5;
     [SerializeField] private ParticleSystem successParticles;
+    [SerializeField] private SwitchPuzzle switcher;
 
     private RaycastHit hit;
     private bool _shootRay = true;
@@ -26,7 +27,8 @@ public class FinishPuzzle : MonoBehaviour
     {
         Transform parentObj = hit.collider.transform.parent;
         Instantiate(successParticles, parentObj.position, Quaternion.identity);
-        scriptRotateObject.ChangeObjectRotated(null);
         parentObj.GetComponent<GoodRotation>().SmoothRotate();
+        switcher.NextPuzzle();
+        _shootRay = true;
     }
 }

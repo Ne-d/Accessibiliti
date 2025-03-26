@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5114463908241750060}
   - component: {fileID: 3114916256220707280}
   - component: {fileID: 5349281303729649970}
+  - component: {fileID: 2653363500816065441}
   m_Layer: 0
   m_Name: PlayerPuzzle
   m_TagString: Untagged
@@ -50,9 +51,9 @@ MonoBehaviour:
   finishLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  scriptRotateObject: {fileID: 3114916256220707280}
   distanceRay: 5
   successParticles: {fileID: 8445361970776198674, guid: 64e1fe78dcfc0ba44a44e96828673ed2, type: 3}
+  switcher: {fileID: 2653363500816065441}
 --- !u!114 &3114916256220707280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,6 +157,21 @@ MonoBehaviour:
   m_DefaultActionMap: Puzzle
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &2653363500816065441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2783458899993696504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f4c05a4f205ed14f97cf5b1dd758f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzles: []
+  delaySwitchPuzzle: 3
+  rotateObj: {fileID: 3114916256220707280}
 --- !u!1 &8110273949289336215
 GameObject:
   m_ObjectHideFlags: 0
