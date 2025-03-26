@@ -7,6 +7,7 @@ public class SwitchPuzzle : MonoBehaviour
     [SerializeField] private float delaySwitchPuzzle = 3;
     [SerializeField] private float delayScaling = 1;
     [SerializeField] private RotateObject rotateObj;
+    [SerializeField] private RemapMaterial remapMat;
 
     private int _indexPuzzle = 0;
     private GoodRotation _actualPuzzle = null;
@@ -35,6 +36,10 @@ public class SwitchPuzzle : MonoBehaviour
 
         _actualPuzzle = Instantiate(puzzles[_indexPuzzle]);
         ScaleUp(_actualPuzzle.gameObject);
+
+        // change Materials
+        if(remapMat)
+            _actualPuzzle.GetComponent<PuzzleMeshMaterials>().ChangeMaterials(remapMat.GetActualPuzzleMat());
     }
 
     private void ScaleUp(GameObject obj)
