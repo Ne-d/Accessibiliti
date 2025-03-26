@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 1897789128331411503}
   - component: {fileID: 3843388388119115574}
   - component: {fileID: 2826681552889820950}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,6 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9082156550185678243}
+  - {fileID: 6476768214568249436}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6727415225828186326
@@ -129,6 +130,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_cc: {fileID: 1897789128331411503}
   m_camera: {fileID: 4466130313161675794}
+  m_bulletPrefab: {fileID: 2553883790715905362, guid: 53fcebc7f819b214685364e6d3901b3c, type: 3}
+  m_shootTransform: {fileID: 6476768214568249436}
 --- !u!114 &2826681552889820950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,7 +172,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9082156550185678243}
   - component: {fileID: 4466130313161675794}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +188,7 @@ Transform:
   m_GameObject: {fileID: 2071424641858910892}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.4, z: -0.08}
+  m_LocalPosition: {x: 0, y: 0.6, z: -0.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -234,3 +237,34 @@ MonoBehaviour:
       BarrelClipping: 0.25
       Anamorphism: 0
   BlendHint: 0
+--- !u!1 &8055392147981726938
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6476768214568249436}
+  m_Layer: 3
+  m_Name: ShootSocket
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6476768214568249436
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8055392147981726938}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.39999998, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3371643140061899496}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
