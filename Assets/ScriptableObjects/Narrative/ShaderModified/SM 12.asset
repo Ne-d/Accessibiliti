@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed05fc6c1b8eb72499df822c66008d14, type: 3}
+  m_Name: SM 12
+  m_EditorClassIdentifier: 
+  targetColor: {r: 1, g: 1, b: 1, a: 1}
+  targetNoiseScale: {x: 0.05, y: 0.05}
+  targetAmplitude: 500
+  texture: {fileID: 2800000, guid: 3c675613801b0bb42a54fb94705dbe2f, type: 3}
+  targetNoiseSpeed: {x: 0.02, y: 0.02}

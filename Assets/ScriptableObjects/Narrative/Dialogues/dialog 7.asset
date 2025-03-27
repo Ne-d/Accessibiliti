@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: dialog 7
   m_EditorClassIdentifier: 
   questioner: "La logique, la s\xE9quence ou l'intuition ?"
-  choiceA: La logique ...
-  choiceB: "La s\xE9quence ..."
-  choiceC: L'intuition ...
+  choiceA:
+    sentence: La logique...
+    shaderModifier: {fileID: 11400000, guid: 9e2d1750d7e0ebb428069e5d9ab12a71, type: 2}
+  choiceB:
+    sentence: "La s\xE9quence..."
+    shaderModifier: {fileID: 11400000, guid: 8e8848a42c41790488840acbaa8646db, type: 2}
+  choiceC:
+    sentence: L'intuition
+    shaderModifier: {fileID: 11400000, guid: 2ce60eaa17068904980bc8a7d40461da, type: 2}

@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: dialog 10
   m_EditorClassIdentifier: 
   questioner: L'analytique, la minutie ou l'empathie ?
-  choiceA: Je ne veux plus continuer ...
-  choiceB: J'ai peur ...
-  choiceC: Je veux rentrer chez moi ...
+  choiceA:
+    sentence: Je ne veux plus continuer
+    shaderModifier: {fileID: 11400000, guid: 8e8848a42c41790488840acbaa8646db, type: 2}
+  choiceB:
+    sentence: J'ai peur...
+    shaderModifier: {fileID: 11400000, guid: f871781e86b5b8b4bb683c8a5d837195, type: 2}
+  choiceC:
+    sentence: "Je veux rentrer chez moi\r"
+    shaderModifier: {fileID: 11400000, guid: 2ce60eaa17068904980bc8a7d40461da, type: 2}

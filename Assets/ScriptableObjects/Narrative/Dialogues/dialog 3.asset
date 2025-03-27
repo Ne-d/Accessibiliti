@@ -10,9 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6601a165c92ec2442bc58865c65a5647, type: 3}
-  m_Name: dialog 5
+  m_Name: dialog 3
   m_EditorClassIdentifier: 
-  questioner: "Peux-tu r\xE9pondre \xE0 quelques questions ?"
-  choiceA: Que m'arrive-t-il ?
-  choiceB: "O\xF9 suis-je ?"
-  choiceC: '*ne rien dire*'
+  questioner: ZZZZzzzz...
+  choiceA:
+    sentence: 'ALLO ?
+
+'
+    shaderModifier: {fileID: 11400000, guid: 9e2d1750d7e0ebb428069e5d9ab12a71, type: 2}
+  choiceB:
+    sentence: 'HE HO !
+
+'
+    shaderModifier: {fileID: 11400000, guid: a2cc5a2e5d2c55947bf36fb3478d30df, type: 2}
+  choiceC:
+    sentence: '*ne rien dire*'
+    shaderModifier: {fileID: 0}
