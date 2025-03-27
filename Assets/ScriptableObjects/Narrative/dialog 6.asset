@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6601a165c92ec2442bc58865c65a5647, type: 3}
   m_Name: dialog 6
   m_EditorClassIdentifier: 
-  questioner: Introverti, extraverti ou spatial ?
+  questioner: "Veuillez essayer d'appr\xE9cier chaque question de mani\xE8re \xE9gale,
+    et de ne pas montrer de pr\xE9f\xE9rence pour l'une ou l'autre.\n\nIntroverti,
+    extraverti ou spatial ?"
   choiceA: "O\xF9 suis-je ?"
   choiceB: "\xC7a ne veut rien dire, qui \xEAtes-vous ?"
   choiceC: '*ne rien dire*'

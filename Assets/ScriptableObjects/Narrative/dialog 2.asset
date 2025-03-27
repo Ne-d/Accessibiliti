@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6601a165c92ec2442bc58865c65a5647, type: 3}
   m_Name: dialog 2
   m_EditorClassIdentifier: 
-  questioner: 
+  questioner: ...
   choiceA: Est-ce qu'il y a quelqu'un ?
   choiceB: "O\xF9 suis-je ?"
   choiceC: '*ne rien dire*'

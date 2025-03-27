@@ -6,6 +6,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private ChoiceButton choiceB;
     [SerializeField] private ChoiceButton choiceC;
 
+    [SerializeField] private SentenceAnimation questioner;
+    [SerializeField] private FirstSelectedSystem firstSelectedSystem;
+
     [SerializeField] private DialogueAction[] dialogues;
 
     private int _indexCurrentDialogue = 0;
@@ -19,8 +22,12 @@ public class DialogueManager : MonoBehaviour
     {
         _indexCurrentDialogue++;
 
+        // End dialogues
         if (_indexCurrentDialogue >= dialogues.Length)
+        {
+            EndDialogues();
             return;
+        }
 
         DialogueAppear(_indexCurrentDialogue);
     }
@@ -29,10 +36,18 @@ public class DialogueManager : MonoBehaviour
     {
         DialogueAction currentDialogue = dialogues[index];
 
-        // TODO : add questioner dialogue
+        float duration = questioner.SetChoiceText(currentDialogue.questioner);
+        duration++;
 
-        choiceA.SetChoiceText(currentDialogue.choiceA);
-        choiceB.SetChoiceText(currentDialogue.choiceB);
-        choiceC.SetChoiceText(currentDialogue.choiceC);
+        choiceA.SetSentenceText(currentDialogue.choiceA, startDelay: duration);
+        choiceB.SetSentenceText(currentDialogue.choiceB, startDelay: duration);
+        choiceC.SetSentenceText(currentDialogue.choiceC, startDelay: duration);
+
+        firstSelectedSystem.SetSelected(choiceA.gameObject);
+    }
+
+    private void EndDialogues()
+    {
+        // TODO : disappear dialogues and the end of the scene
     }
 }

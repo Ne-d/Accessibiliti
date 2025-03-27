@@ -1,38 +1,22 @@
-using UnityEngine;
-using TMPro;
 using System.Collections;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class ChoiceButton : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI textZone;
+    public SentenceAnimation sentence;
+    public Button button;
 
-    [Header("Values text"), Space(6)]
-
-    [SerializeField] private float durationTextSpawn = .05f;
-
-    private void Awake()
+    public void SetSentenceText(string text, float delaySpeed = 1, float startDelay = 0)
     {
-        textZone.text = "";
+        sentence.SetChoiceText(text, delaySpeed, startDelay);
+        StartCoroutine(DelaySetInteractableButton(startDelay));
     }
 
-    public void SetChoiceText(string text)
+    private IEnumerator DelaySetInteractableButton(float delay)
     {
-        StopAllCoroutines();
-        textZone.text = "";
-        StartCoroutine(DelaySpawnSentence(text));
-    }
-
-    private IEnumerator DelaySpawnSentence(string text)
-    {
-        string actualText = "";
-        int index = 0;
-
-        while(index < text.Length)
-        {
-            actualText += text[index];
-            textZone.text = actualText;
-            index++;
-            yield return new WaitForSeconds(durationTextSpawn);
-        }
+        button.interactable = false;
+        yield return new WaitForSeconds(delay);
+        button.interactable = true;
     }
 }
