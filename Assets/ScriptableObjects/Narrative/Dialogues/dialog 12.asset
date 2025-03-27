@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: dialog 12
   m_EditorClassIdentifier: 
   questioner: "Merci, pour ces r\xE9ponses. \xC0 bient\xF4t."
-  choiceA: Je ne comprends pas (?)
-  choiceB: Ne me laissez pas seul ...
-  choiceC: Laissez-moi !
+  choiceA:
+    sentence: Je ne comprends pas
+    shaderModifier: {fileID: 11400000, guid: 04394c2d61b121e4aa972f9f27cb22d9, type: 2}
+  choiceB:
+    sentence: Ne me laissez pas seul
+    shaderModifier: {fileID: 11400000, guid: 04394c2d61b121e4aa972f9f27cb22d9, type: 2}
+  choiceC:
+    sentence: Expliquez-moi !
+    shaderModifier: {fileID: 11400000, guid: 04394c2d61b121e4aa972f9f27cb22d9, type: 2}

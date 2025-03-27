@@ -10,9 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6601a165c92ec2442bc58865c65a5647, type: 3}
-  m_Name: dialog 13
+  m_Name: dialog 1
   m_EditorClassIdentifier: 
   questioner: 
-  choiceA: '*ne rien dire*'
-  choiceB: '*ne rien dire*'
-  choiceC: '*ne rien dire* :)'
+  choiceA:
+    sentence: Il y a quelqu'un ?
+    shaderModifier: {fileID: 0}
+  choiceB:
+    sentence: "O\xF9 suis-je ?\r"
+    shaderModifier: {fileID: 0}
+  choiceC:
+    sentence: '*ne rien dire*'
+    shaderModifier: {fileID: 0}
