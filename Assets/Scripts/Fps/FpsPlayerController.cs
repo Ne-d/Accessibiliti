@@ -18,6 +18,23 @@ public class FpsPlayerController : MonoBehaviour
     private Vector2 m_lookInput;
 
     private Vector2 m_viewDirection;
+
+    public void Start()
+    {
+        transform.rotation = Quaternion.LookRotation(Vector3.forward, Vector3.up);
+    }
+
+    public void Update()
+    {
+        if (GameManager.Instance.IsPlaying)
+        {
+            Vector3 walkDirection = new Vector3(m_walkInput.x, 0, m_walkInput.y);
+            m_cc.Move(transform.rotation * walkDirection * (m_moveSpeed * Time.deltaTime));
+
+            transform.rotation = Quaternion.Euler(0, m_viewDirection.x, 0);
+            m_camera.transform.localRotation = Quaternion.Euler(-m_viewDirection.y, 0, 0);
+        }
+    }
     
     [UsedImplicitly]
     public void OnWalk(InputValue value)
@@ -28,25 +45,11 @@ public class FpsPlayerController : MonoBehaviour
     [UsedImplicitly]
     public void OnLook(InputValue value)
     {
-        m_lookInput = value.Get<Vector2>();
-        m_viewDirection += m_lookInput * m_lookSensitivity;
-    }
-
-    public void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        
-        transform.rotation = Quaternion.LookRotation(Vector3.forward, Vector3.up);
-    }
-
-    public void Update()
-    {
-        Vector3 walkDirection = new Vector3(m_walkInput.x, 0, m_walkInput.y);
-        m_cc.Move(transform.rotation * walkDirection * (m_moveSpeed * Time.deltaTime));
-        
-        transform.rotation = Quaternion.Euler(0, m_viewDirection.x, 0);
-        m_camera.transform.localRotation = Quaternion.Euler(-m_viewDirection.y, 0, 0);
+        if (GameManager.Instance.IsPlaying)
+        {
+            m_lookInput = value.Get<Vector2>();
+            m_viewDirection += m_lookInput * m_lookSensitivity;
+        }
     }
 
     [UsedImplicitly]

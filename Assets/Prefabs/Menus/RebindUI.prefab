@@ -290,7 +290,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Reset
+  m_Text: "R\xE9initialiser"
 --- !u!1 &6680292650503350822
 GameObject:
   m_ObjectHideFlags: 0
