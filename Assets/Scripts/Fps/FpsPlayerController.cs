@@ -2,7 +2,6 @@ using JetBrains.Annotations;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using TMPro;
 
 public class FpsPlayerController : MonoBehaviour
 {
@@ -18,7 +17,7 @@ public class FpsPlayerController : MonoBehaviour
     private Vector2 m_lookInput;
 
     private Vector2 m_viewDirection;
-
+    
     public void Start()
     {
         transform.rotation = Quaternion.LookRotation(Vector3.forward, Vector3.up);
@@ -29,7 +28,7 @@ public class FpsPlayerController : MonoBehaviour
         if (GameManager.Instance.IsPlaying)
         {
             Vector3 walkDirection = new Vector3(m_walkInput.x, 0, m_walkInput.y);
-            m_cc.Move(transform.rotation * walkDirection * (m_moveSpeed * Time.deltaTime));
+            m_cc.Move(transform.rotation * walkDirection * (m_moveSpeed * (GameManager.Instance.PlayerSpeed / 100.0f) * Time.deltaTime));
 
             transform.rotation = Quaternion.Euler(0, m_viewDirection.x, 0);
             m_camera.transform.localRotation = Quaternion.Euler(-m_viewDirection.y, 0, 0);
@@ -48,7 +47,7 @@ public class FpsPlayerController : MonoBehaviour
         if (GameManager.Instance.IsPlaying)
         {
             m_lookInput = value.Get<Vector2>();
-            m_viewDirection += m_lookInput * m_lookSensitivity;
+            m_viewDirection += m_lookInput * m_lookSensitivity * GameManager.Instance.FpsMouseSensitivity;
         }
     }
 

@@ -18,6 +18,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] private InputActionAsset m_inputActionAsset;
     [SerializeField] private InputActionReference m_pauseAction;
 
+    // Settings
+    public float FpsMouseSensitivity { get; set; } = 1.0f;
+    public float PuzzleMouseSensitivity { get; set; } = 1.0f;
+    public float PlayerSpeed { get; set; } = 100.0f;
+    public float EnemySpeed { get; set; } = 100.0f;
+
+    public bool DialogueAnimation { get; set; } = true;
+    public float DialogueAnimationSpeed { get; set; } = 1.0f;
+
+    public bool WindowedMode { get; set; } = false;
+    
     public bool IsPlaying { get; private set; } = false;
 
     public GameManager()
