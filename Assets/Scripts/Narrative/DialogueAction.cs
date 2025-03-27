@@ -1,4 +1,12 @@
+using System;
 using UnityEngine;
+
+[Serializable]
+public struct Choice
+{
+    [TextArea] public string sentence;
+    public ShaderModifier shaderModifier;
+}
 
 [CreateAssetMenu(fileName = "DialogueAction", menuName = "Scriptable Objects/DialogueAction")]
 public class DialogueAction : ScriptableObject
@@ -7,7 +15,13 @@ public class DialogueAction : ScriptableObject
 
     [Header("Choices"), Space(6)]
 
-    [TextArea] public string choiceA;
-    [TextArea] public string choiceB;
-    [TextArea] public string choiceC;
+    public Choice choiceA;
+
+    [Space(4)]
+
+    public Choice choiceB;
+
+    [Space(4)]
+
+    public Choice choiceC;
 }

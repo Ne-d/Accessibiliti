@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: dialog 11
   m_EditorClassIdentifier: 
   questioner: "L'arithm\xE9tique, l'algorithmique ou la g\xE9om\xE9trie ?"
-  choiceA: "\xC7a ne fait aucun sens ..."
-  choiceB: "Faites que \xE7a s'arr\xEAte !"
-  choiceC: Putain Steven c'est encore long ?
+  choiceA:
+    sentence: Je ne comprends rien !
+    shaderModifier: {fileID: 11400000, guid: e6f4e5fae1f52e84c9909b09cacf25d4, type: 2}
+  choiceB:
+    sentence: "Arr\xEAtez \xE7a !"
+    shaderModifier: {fileID: 11400000, guid: 3e3c81637fda80e4c8e482ba5410cfe3, type: 2}
+  choiceC:
+    sentence: Putain Steven c'est encore long ?
+    shaderModifier: {fileID: 11400000, guid: a2cc5a2e5d2c55947bf36fb3478d30df, type: 2}

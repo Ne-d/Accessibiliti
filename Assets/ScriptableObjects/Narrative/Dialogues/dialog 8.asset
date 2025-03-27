@@ -14,6 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questioner: "Int\xE9ressant ...\nFormalit\xE9, factualit\xE9 ou intuitivit\xE9
     ?"
-  choiceA: "Formalit\xE9"
-  choiceB: "Factualit\xE9"
-  choiceC: "Intuitivit\xE9"
+  choiceA:
+    sentence: "Formalit\xE9"
+    shaderModifier: {fileID: 11400000, guid: f1ca77daa75035a44af609b6757316e0, type: 2}
+  choiceB:
+    sentence: "Factualit\xE9"
+    shaderModifier: {fileID: 11400000, guid: 9db4a0dab14a92b4390f82ca47024329, type: 2}
+  choiceC:
+    sentence: "Intuitivit\xE9"
+    shaderModifier: {fileID: 11400000, guid: e6f4e5fae1f52e84c9909b09cacf25d4, type: 2}

@@ -15,6 +15,12 @@ MonoBehaviour:
   questioner: "Veuillez essayer d'appr\xE9cier chaque question de mani\xE8re \xE9gale,
     et de ne pas montrer de pr\xE9f\xE9rence pour l'une ou l'autre.\n\nIntroverti,
     extraverti ou spatial ?"
-  choiceA: "O\xF9 suis-je ?"
-  choiceB: "\xC7a ne veut rien dire, qui \xEAtes-vous ?"
-  choiceC: '*ne rien dire*'
+  choiceA:
+    sentence: "O\xF9 suis-je ?"
+    shaderModifier: {fileID: 11400000, guid: e6f4e5fae1f52e84c9909b09cacf25d4, type: 2}
+  choiceB:
+    sentence: "\xC7a ne veut rien dire. Qui \xEAtes-vous ?"
+    shaderModifier: {fileID: 11400000, guid: 3e3c81637fda80e4c8e482ba5410cfe3, type: 2}
+  choiceC:
+    sentence: "O\xF9 est pass\xE9 mon FPS ?"
+    shaderModifier: {fileID: 11400000, guid: f871781e86b5b8b4bb683c8a5d837195, type: 2}

@@ -39,9 +39,15 @@ public class DialogueManager : MonoBehaviour
         float duration = questioner.SetChoiceText(currentDialogue.questioner);
         duration++;
 
-        choiceA.SetSentenceText(currentDialogue.choiceA, startDelay: duration);
-        choiceB.SetSentenceText(currentDialogue.choiceB, startDelay: duration);
-        choiceC.SetSentenceText(currentDialogue.choiceC, startDelay: duration);
+        // set text choices
+        choiceA.SetSentenceText(currentDialogue.choiceA.sentence, startDelay: duration);
+        choiceB.SetSentenceText(currentDialogue.choiceB.sentence, startDelay: duration);
+        choiceC.SetSentenceText(currentDialogue.choiceC.sentence, startDelay: duration);
+
+        // set shader answer
+        choiceA.SetShaderAction(currentDialogue.choiceA.shaderModifier);
+        choiceB.SetShaderAction(currentDialogue.choiceB.shaderModifier);
+        choiceC.SetShaderAction(currentDialogue.choiceC.shaderModifier);
 
         firstSelectedSystem.SetSelected(choiceA.gameObject);
     }

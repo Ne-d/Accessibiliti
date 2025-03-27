@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: dialog 9
   m_EditorClassIdentifier: 
   questioner: Le moi, les autres ou l'organisation ?
-  choiceA: Le moi ?
-  choiceB: Les autres ?
-  choiceC: Je ne comprends pas ...
+  choiceA:
+    sentence: Le moi ?
+    shaderModifier: {fileID: 11400000, guid: c6a5ebf8dd1a001449c7931065a54e33, type: 2}
+  choiceB:
+    sentence: Les autres ?
+    shaderModifier: {fileID: 11400000, guid: 61682940007be2e45967680ba8aadb9e, type: 2}
+  choiceC:
+    sentence: Je ne comprends pas
+    shaderModifier: {fileID: 11400000, guid: 5dc507491822a8d418126f08f4463605, type: 2}

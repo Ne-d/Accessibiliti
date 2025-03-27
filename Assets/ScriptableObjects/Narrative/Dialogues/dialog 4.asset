@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: dialog 4
   m_EditorClassIdentifier: 
   questioner: '!!!'
-  choiceA: ALLO ?
-  choiceB: HE HO !
-  choiceC: '*ne rien dire*'
+  choiceA:
+    sentence: HEYYYYY !!!
+    shaderModifier: {fileID: 11400000, guid: 9db4a0dab14a92b4390f82ca47024329, type: 2}
+  choiceB:
+    sentence: "S'il vous pla\xEEt ?"
+    shaderModifier: {fileID: 11400000, guid: 9e2d1750d7e0ebb428069e5d9ab12a71, type: 2}
+  choiceC:
+    sentence: '*ne rien dire*'
+    shaderModifier: {fileID: 11400000, guid: f1ca77daa75035a44af609b6757316e0, type: 2}
