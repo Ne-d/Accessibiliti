@@ -10,6 +10,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private FirstSelectedSystem firstSelectedSystem;
 
     [SerializeField] private DialogueAction[] dialogues;
+    public float speedCharacterAccessibility = 1f;
 
     private int _indexCurrentDialogue = 0;
 
@@ -36,13 +37,13 @@ public class DialogueManager : MonoBehaviour
     {
         DialogueAction currentDialogue = dialogues[index];
 
-        float duration = questioner.SetChoiceText(currentDialogue.questioner);
+        float duration = questioner.SetChoiceText(currentDialogue.questioner, speedCharacterAccessibility);
         duration++;
 
         // set text choices
-        choiceA.SetSentenceText(currentDialogue.choiceA.sentence, startDelay: duration);
-        choiceB.SetSentenceText(currentDialogue.choiceB.sentence, startDelay: duration);
-        choiceC.SetSentenceText(currentDialogue.choiceC.sentence, startDelay: duration);
+        choiceA.SetSentenceText(currentDialogue.choiceA.sentence, speedCharacterAccessibility, duration);
+        choiceB.SetSentenceText(currentDialogue.choiceB.sentence, speedCharacterAccessibility, duration);
+        choiceC.SetSentenceText(currentDialogue.choiceC.sentence, speedCharacterAccessibility, duration);
 
         // set shader answer
         choiceA.SetShaderAction(currentDialogue.choiceA.shaderModifier);
