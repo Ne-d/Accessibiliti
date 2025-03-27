@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject m_keybindsMenu;
     [SerializeField] private GameObject m_accessibilityMenu;
     [SerializeField] private GameObject m_pauseMenu;
+    [SerializeField] private FirstSelectedSystem firstSelectedSystem;
+    [SerializeField] private GameObject resumePauseButton;
     
     [SerializeField] private SceneAsset m_gameScene;
     
@@ -56,6 +58,12 @@ public class GameManager : MonoBehaviour
         ResumeGame();
     }
 
+    public void LaunchGame(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+        ResumeGame();
+    }
+
     public void TogglePause()
     {
         if (IsPlaying)
@@ -71,6 +79,8 @@ public class GameManager : MonoBehaviour
         m_pauseMenu.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
+        firstSelectedSystem.SetSelected(resumePauseButton);
     }
 
     public void ResumeGame()
@@ -118,5 +128,8 @@ public class GameManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+#if UNITY_EDITOR
+        EditorApplication.isPlaying = false;
+#endif
     }
 }
