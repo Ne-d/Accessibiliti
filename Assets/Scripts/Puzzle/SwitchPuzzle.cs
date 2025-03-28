@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SwitchPuzzle : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class SwitchPuzzle : MonoBehaviour
         }
 
         if (_indexPuzzle >= puzzles.Length)
-            return;
+            SceneManager.LoadScene(0);
 
         _actualPuzzle = Instantiate(puzzles[_indexPuzzle]);
         ScaleUp(_actualPuzzle.gameObject);
