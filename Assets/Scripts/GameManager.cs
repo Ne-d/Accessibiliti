@@ -79,6 +79,8 @@ public class GameManager : MonoBehaviour
             if (FpsEnemiesKilled >= 2)
             {
                 CurrentGameMode = GameMode.Narrative;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 LaunchGame(m_narrativeScene.name);
             }
         }
@@ -124,8 +126,11 @@ public class GameManager : MonoBehaviour
         IsPlaying = true;
         HideAllMenus();
         Time.timeScale = 1;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        if (CurrentGameMode == GameMode.Fps)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
     }
 
     public void HideAllMenus()
