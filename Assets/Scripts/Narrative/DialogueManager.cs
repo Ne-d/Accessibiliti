@@ -16,6 +16,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
+        firstSelectedSystem = FindAnyObjectByType<FirstSelectedSystem>();
         DialogueAppear(_indexCurrentDialogue);
     }
 
