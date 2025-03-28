@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed05fc6c1b8eb72499df822c66008d14, type: 3}
   m_Name: SM 2
   m_EditorClassIdentifier: 
-  targetColor: {r: 0, g: 0.60346603, b: 1, a: 1}
+  targetColor: {r: 0, g: 0.76309514, b: 1, a: 1}
   targetNoiseScale: {x: 0.02, y: 0.02}
   targetAmplitude: 200
   texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}

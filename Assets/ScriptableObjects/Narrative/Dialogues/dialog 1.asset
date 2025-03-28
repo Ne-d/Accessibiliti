@@ -15,10 +15,10 @@ MonoBehaviour:
   questioner: 
   choiceA:
     sentence: Il y a quelqu'un ?
-    shaderModifier: {fileID: 0}
+    shaderModifier: {fileID: 11400000, guid: 04394c2d61b121e4aa972f9f27cb22d9, type: 2}
   choiceB:
     sentence: "O\xF9 suis-je ?\r"
-    shaderModifier: {fileID: 0}
+    shaderModifier: {fileID: 11400000, guid: 04394c2d61b121e4aa972f9f27cb22d9, type: 2}
   choiceC:
     sentence: '*ne rien dire*'
-    shaderModifier: {fileID: 0}
+    shaderModifier: {fileID: 11400000, guid: 04394c2d61b121e4aa972f9f27cb22d9, type: 2}
