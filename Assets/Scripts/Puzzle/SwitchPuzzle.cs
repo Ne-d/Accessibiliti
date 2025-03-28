@@ -33,7 +33,10 @@ public class SwitchPuzzle : MonoBehaviour
         }
 
         if (_indexPuzzle >= puzzles.Length)
+        {
             SceneManager.LoadScene(0);
+            return;
+        }
 
         _actualPuzzle = Instantiate(puzzles[_indexPuzzle]);
         ScaleUp(_actualPuzzle.gameObject);
