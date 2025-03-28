@@ -27,10 +27,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private FirstSelectedSystem firstSelectedSystem;
     [SerializeField] private GameObject resumePauseButton;
     
-    [SerializeField] private SceneAsset m_menuScene;
-    [SerializeField] private SceneAsset m_fpsScene;
-    [SerializeField] private SceneAsset m_narrativeScene;
-    [SerializeField] private SceneAsset m_puzzleScene;
+    [SerializeField] private int m_menuScene = 0;
+    [SerializeField] private int m_fpsScene = 1;
+    [SerializeField] private int m_narrativeScene = 2;
+    [SerializeField] private int m_puzzleScene = 3;
     
     [SerializeField] private InputActionAsset m_inputActionAsset;
     [SerializeField] private InputActionReference m_pauseAction;
@@ -45,6 +45,8 @@ public class GameManager : MonoBehaviour
 
     public bool DialogueAnimation { get; set; } = true;
     public float DialogueAnimationSpeed { get; set; } = 1.0f;
+    
+    public float DialogueMotionSicknessSpeed { get; set; } = 100.0f;
     
     public bool IsPlaying { get; private set; } = false;
 
@@ -76,12 +78,12 @@ public class GameManager : MonoBehaviour
     {
         if (CurrentGameMode == GameMode.Fps)
         {
-            if (FpsEnemiesKilled >= 4) // TODO: Change to real value after demo
+            if (FpsEnemiesKilled >= 20) // TODO: Change to real value after demo
             {
                 CurrentGameMode = GameMode.Narrative;
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
-                LaunchGame(m_narrativeScene.name);
+                LaunchGame(m_narrativeScene);
             }
         }
     }
@@ -89,32 +91,32 @@ public class GameManager : MonoBehaviour
     public void PlayGame()
     {
         CurrentGameMode = GameMode.Fps;
-        SceneManager.LoadScene(m_fpsScene.name);
+        SceneManager.LoadScene(m_fpsScene);
         ResumeGame();
     }
 
-    public void LaunchGame(string sceneName)
+    public void LaunchGame(int sceneBuildIndex)
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(sceneBuildIndex);
         ResumeGame();
     }
 
     public void LaunchFps()
     {
         CurrentGameMode = GameMode.Fps;
-        LaunchGame(m_fpsScene.name);
+        LaunchGame(m_fpsScene);
     }
 
     public void LaunchNarrative()
     {
         CurrentGameMode = GameMode.Narrative;
-        LaunchGame(m_narrativeScene.name);
+        LaunchGame(m_narrativeScene);
     }
 
     public void LaunchPuzzle()
     {
         CurrentGameMode = GameMode.Puzzle;
-        LaunchGame(m_puzzleScene.name);
+        LaunchGame(m_puzzleScene);
     }
 
     public void TogglePause()
@@ -156,6 +158,10 @@ public class GameManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
+
+        FogMaterialModifier mat = FindAnyObjectByType<FogMaterialModifier>();
+        if(mat != null)
+            mat.SetSpeedAccessibility(DialogueMotionSicknessSpeed / 100.0f);
     }
 
     public void HideAllMenus()
@@ -178,7 +184,7 @@ public class GameManager : MonoBehaviour
 
         if (CurrentGameMode != GameMode.Menu)
         {
-            LaunchGame(m_menuScene.name);
+            LaunchGame(m_menuScene);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             Destroy(gameObject);

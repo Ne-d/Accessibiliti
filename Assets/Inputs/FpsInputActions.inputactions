@@ -91,6 +91,17 @@
                 },
                 {
                     "name": "",
+                    "id": "82df4fd8-8e50-4f68-ae20-47b0c4a1926c",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Walk",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "676ef02f-0f9a-4228-8c82-35386cc42945",
                     "path": "<Mouse>/delta",
                     "interactions": "",
@@ -102,8 +113,30 @@
                 },
                 {
                     "name": "",
+                    "id": "ecb99c5e-088d-4cea-9705-9e53988b8f8e",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "d92e06c1-9e2f-441f-a27b-e380942010de",
                     "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c73431b6-2168-4921-85a5-835c7502935b",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
