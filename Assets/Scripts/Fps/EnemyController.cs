@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private NavMeshAgent m_agent;
     [SerializeField] private GameObject m_visual;
     [SerializeField] private float m_startingHealth = 100.0f;
+    [SerializeField] private float m_speed = 3.5f;
     
     private Camera m_camera;
     private float m_health;
@@ -27,6 +28,8 @@ public class EnemyController : MonoBehaviour
         
         m_visual.transform.LookAt(m_camera.transform.position);
         m_visual.transform.rotation = Quaternion.Euler(0, m_visual.transform.rotation.eulerAngles.y, 0);
+        
+        m_agent.speed = m_speed * (GameManager.Instance.EnemySpeed / 100.0f);
 
         if (m_shouldDie)
             Die();
