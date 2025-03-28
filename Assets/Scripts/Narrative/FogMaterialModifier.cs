@@ -38,7 +38,8 @@ public class FogMaterialModifier : MonoBehaviour
     public void ModifyMaterial(ShaderModifier sm)
     {
         _actualShaderModifier = sm;
-        StartCoroutine(SmoothModifyer(sm.targetColor, sm.targetNoiseScale * speedAccessibility, sm.targetAmplitude, sm.texture, sm.targetNoiseSpeed * speedAccessibility));
+        if(_actualShaderModifier != null)
+            StartCoroutine(SmoothModifyer(sm.targetColor, sm.targetNoiseScale * speedAccessibility, sm.targetAmplitude, sm.texture, sm.targetNoiseSpeed * speedAccessibility));
     }
 
     private IEnumerator SmoothModifyer(Color targetColor, Vector2 targetNoiseScale, float targetAmplitude, Texture2D texture, Vector2 targetNoiseSpeed)
