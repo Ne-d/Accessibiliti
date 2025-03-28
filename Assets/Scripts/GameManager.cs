@@ -121,10 +121,13 @@ public class GameManager : MonoBehaviour
 
     public void TogglePause()
     {
-        if (IsPlaying)
-            PauseGame();
-        else
-            ResumeGame();
+        if (CurrentGameMode != GameMode.Menu)
+        {
+            if (IsPlaying)
+                PauseGame();
+            else
+                ResumeGame();
+        }
     }
 
     public void ToggleFullscreen(bool val)
