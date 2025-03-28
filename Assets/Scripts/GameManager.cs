@@ -181,6 +181,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void GoToPauseMenu()
+    {
+        if(CurrentGameMode == GameMode.Menu)
+            GoToMainMenu();
+        else
+        {
+            HideAllMenus();
+            m_pauseMenu.SetActive(true);
+        }
+    }
+
     public void GoToGameModesMenu()
     {
         HideAllMenus();
