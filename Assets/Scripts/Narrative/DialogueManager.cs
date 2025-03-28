@@ -55,6 +55,6 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogues()
     {
-        // TODO : disappear dialogues and the end of the scene
+        GameManager.Instance.LaunchPuzzle();
     }
 }

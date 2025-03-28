@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private FirstSelectedSystem firstSelectedSystem;
     [SerializeField] private GameObject resumePauseButton;
     
+    [SerializeField] private SceneAsset m_menuScene;
     [SerializeField] private SceneAsset m_fpsScene;
     [SerializeField] private SceneAsset m_narrativeScene;
     [SerializeField] private SceneAsset m_puzzleScene;
@@ -49,7 +50,7 @@ public class GameManager : MonoBehaviour
     public bool IsPlaying { get; private set; } = false;
 
     // Gameplay
-    public GameMode CurrentGameMode { get; set; } = GameMode.Menu;
+    private GameMode CurrentGameMode { get; set; } = GameMode.Menu;
 
     public int FpsEnemiesKilled { get; set; } = 0;
     
@@ -99,6 +100,12 @@ public class GameManager : MonoBehaviour
         ResumeGame();
     }
 
+    public void LaunchPuzzle()
+    {
+        CurrentGameMode = GameMode.Puzzle;
+        LaunchGame(m_puzzleScene.name);
+    }
+
     public void TogglePause()
     {
         if (IsPlaying)
@@ -146,6 +153,17 @@ public class GameManager : MonoBehaviour
     {
         HideAllMenus();
         m_mainMenu.SetActive(true);
+        
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        if (CurrentGameMode != GameMode.Menu)
+        {
+            LaunchGame(m_menuScene.name);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Destroy(gameObject);
+        }
     }
     
     public void GoToOptionsMenu()

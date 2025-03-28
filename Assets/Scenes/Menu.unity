@@ -6871,6 +6871,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 102900000, guid: 6e770ba10737cf144a053bf0e25b0679, type: 3}
     - target: {fileID: 5455956174551387782, guid: d2864592d2bea6a48a2115c2fb779388, type: 3}
+      propertyPath: m_menuScene
+      value: 
+      objectReference: {fileID: 102900000, guid: 9c9b6efc0bd33cd44b65a7c97041a38b, type: 3}
+    - target: {fileID: 5455956174551387782, guid: d2864592d2bea6a48a2115c2fb779388, type: 3}
       propertyPath: m_eventSystem
       value: 
       objectReference: {fileID: 1254406960339296045}
