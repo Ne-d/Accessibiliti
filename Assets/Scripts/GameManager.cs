@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     
     // References
     [SerializeField] private GameObject m_mainMenu;
+    [SerializeField] private GameObject m_gameModesMenu;
     [SerializeField] private GameObject m_optionsMenu;
     [SerializeField] private GameObject m_keybindsMenu;
     [SerializeField] private GameObject m_accessibilityMenu;
@@ -100,6 +101,18 @@ public class GameManager : MonoBehaviour
         ResumeGame();
     }
 
+    public void LaunchFps()
+    {
+        CurrentGameMode = GameMode.Fps;
+        LaunchGame(m_fpsScene.name);
+    }
+
+    public void LaunchNarrative()
+    {
+        CurrentGameMode = GameMode.Narrative;
+        LaunchGame(m_narrativeScene.name);
+    }
+
     public void LaunchPuzzle()
     {
         CurrentGameMode = GameMode.Puzzle;
@@ -133,6 +146,7 @@ public class GameManager : MonoBehaviour
         IsPlaying = true;
         HideAllMenus();
         Time.timeScale = 1;
+        
         if (CurrentGameMode == GameMode.Fps)
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -143,6 +157,7 @@ public class GameManager : MonoBehaviour
     public void HideAllMenus()
     {
         m_mainMenu.SetActive(false);
+        m_gameModesMenu.SetActive(false);
         m_optionsMenu.SetActive(false);
         m_keybindsMenu.SetActive(false);
         m_accessibilityMenu.SetActive(false);
@@ -164,6 +179,23 @@ public class GameManager : MonoBehaviour
             Cursor.visible = true;
             Destroy(gameObject);
         }
+    }
+
+    public void GoToPauseMenu()
+    {
+        if(CurrentGameMode == GameMode.Menu)
+            GoToMainMenu();
+        else
+        {
+            HideAllMenus();
+            m_pauseMenu.SetActive(true);
+        }
+    }
+
+    public void GoToGameModesMenu()
+    {
+        HideAllMenus();
+        m_gameModesMenu.SetActive(true);
     }
     
     public void GoToOptionsMenu()
