@@ -1,5 +1,6 @@
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -32,6 +33,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private InputActionAsset m_inputActionAsset;
     [SerializeField] private InputActionReference m_pauseAction;
 
+    [SerializeField] public EventSystem m_eventSystem;
+    
     // Settings
     public float FpsMouseSensitivity { get; set; } = 1.0f;
     public float PuzzleMouseSensitivity { get; set; } = 1.0f;

@@ -6871,6 +6871,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 102900000, guid: 6e770ba10737cf144a053bf0e25b0679, type: 3}
     - target: {fileID: 5455956174551387782, guid: d2864592d2bea6a48a2115c2fb779388, type: 3}
+      propertyPath: m_eventSystem
+      value: 
+      objectReference: {fileID: 1254406960339296045}
+    - target: {fileID: 5455956174551387782, guid: d2864592d2bea6a48a2115c2fb779388, type: 3}
       propertyPath: m_puzzleScene
       value: 
       objectReference: {fileID: 102900000, guid: 0739e345e7c50af4ba9a909db16232b2, type: 3}
@@ -7535,6 +7539,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8089549291274896319, guid: d2864592d2bea6a48a2115c2fb779388, type: 3}
+      propertyPath: m_SortingOrder
+      value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 8089549291274896319, guid: d2864592d2bea6a48a2115c2fb779388, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
       objectReference: {fileID: 0}
@@ -7715,6 +7723,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2864592d2bea6a48a2115c2fb779388, type: 3}
+--- !u!114 &1254406960339296045 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4940375360664617789, guid: d2864592d2bea6a48a2115c2fb779388, type: 3}
+  m_PrefabInstance: {fileID: 1254406960339296044}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
