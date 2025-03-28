@@ -19,6 +19,16 @@ public class DialogueManager : MonoBehaviour
         DialogueAppear(_indexCurrentDialogue);
     }
 
+    private void Update()
+    {
+        speedCharacterAccessibility = 1 / GameManager.Instance.DialogueAnimationSpeed;
+
+        if (!GameManager.Instance.DialogueAnimation)
+        {
+            speedCharacterAccessibility = 0;
+        }
+    }
+
     public void NextDialogue()
     {
         _indexCurrentDialogue++;

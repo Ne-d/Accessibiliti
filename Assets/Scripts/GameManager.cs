@@ -45,8 +45,6 @@ public class GameManager : MonoBehaviour
 
     public bool DialogueAnimation { get; set; } = true;
     public float DialogueAnimationSpeed { get; set; } = 1.0f;
-
-    public bool WindowedMode { get; set; } = false;
     
     public bool IsPlaying { get; private set; } = false;
 
@@ -78,7 +76,7 @@ public class GameManager : MonoBehaviour
     {
         if (CurrentGameMode == GameMode.Fps)
         {
-            if (FpsEnemiesKilled >= 2)
+            if (FpsEnemiesKilled >= 4) // TODO: Change to real value after demo
             {
                 CurrentGameMode = GameMode.Narrative;
                 Cursor.lockState = CursorLockMode.None;
@@ -125,6 +123,12 @@ public class GameManager : MonoBehaviour
             PauseGame();
         else
             ResumeGame();
+    }
+
+    public void ToggleFullscreen(bool val)
+    {
+        if (Screen.fullScreen != val)
+            Screen.fullScreen = val;
     }
     
     public void PauseGame()
