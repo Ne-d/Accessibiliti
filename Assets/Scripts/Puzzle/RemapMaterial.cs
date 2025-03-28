@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class RemapMaterial : MonoBehaviour
@@ -12,6 +13,12 @@ public class RemapMaterial : MonoBehaviour
     public PuzzleMat GetActualPuzzleMat()
     {
         return allMats[_indexMat];
+    }
+
+    public void OnSwitchMaterials(InputAction.CallbackContext context)
+    {
+        if (context.started)
+            SwitchMaterials();
     }
 
     public void SwitchMaterials()
