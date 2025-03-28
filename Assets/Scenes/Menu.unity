@@ -6610,6 +6610,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4736922732608803972, guid: d2864592d2bea6a48a2115c2fb779388, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4759159474106268507, guid: d2864592d2bea6a48a2115c2fb779388, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -6862,6 +6866,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5455956174551387782, guid: d2864592d2bea6a48a2115c2fb779388, type: 3}
+      propertyPath: m_fpsScene
+      value: 
+      objectReference: {fileID: 102900000, guid: 6e770ba10737cf144a053bf0e25b0679, type: 3}
+    - target: {fileID: 5455956174551387782, guid: d2864592d2bea6a48a2115c2fb779388, type: 3}
+      propertyPath: m_puzzleScene
+      value: 
+      objectReference: {fileID: 102900000, guid: 0739e345e7c50af4ba9a909db16232b2, type: 3}
+    - target: {fileID: 5455956174551387782, guid: d2864592d2bea6a48a2115c2fb779388, type: 3}
+      propertyPath: m_narrativeScene
+      value: 
+      objectReference: {fileID: 102900000, guid: 0b5cde9bd90def64a8d79b51626c0eba, type: 3}
     - target: {fileID: 5607782399920560125, guid: d2864592d2bea6a48a2115c2fb779388, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

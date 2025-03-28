@@ -34,6 +34,7 @@ public class EnemyController : MonoBehaviour
 
     private void Die()
     {
+        GameManager.Instance.FpsEnemiesKilled++;
         Destroy(gameObject);
     }
 

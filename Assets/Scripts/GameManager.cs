@@ -2,11 +2,21 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
+
+public enum GameMode
+{
+    Menu,
+    Fps,
+    Narrative,
+    Puzzle
+}
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; } // We singletonning
     
+    // References
     [SerializeField] private GameObject m_mainMenu;
     [SerializeField] private GameObject m_optionsMenu;
     [SerializeField] private GameObject m_keybindsMenu;
@@ -15,7 +25,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private FirstSelectedSystem firstSelectedSystem;
     [SerializeField] private GameObject resumePauseButton;
     
-    [SerializeField] private SceneAsset m_gameScene;
+    [SerializeField] private SceneAsset m_fpsScene;
+    [SerializeField] private SceneAsset m_narrativeScene;
+    [SerializeField] private SceneAsset m_puzzleScene;
     
     [SerializeField] private InputActionAsset m_inputActionAsset;
     [SerializeField] private InputActionReference m_pauseAction;
@@ -33,6 +45,11 @@ public class GameManager : MonoBehaviour
     
     public bool IsPlaying { get; private set; } = false;
 
+    // Gameplay
+    public GameMode CurrentGameMode { get; set; } = GameMode.Menu;
+
+    public int FpsEnemiesKilled { get; set; } = 0;
+    
     public GameManager()
     {
         Instance = this;
@@ -52,9 +69,22 @@ public class GameManager : MonoBehaviour
         m_pauseAction.action.started += _ => TogglePause();
     }
 
+    public void Update()
+    {
+        if (CurrentGameMode == GameMode.Fps)
+        {
+            if (FpsEnemiesKilled >= 2)
+            {
+                CurrentGameMode = GameMode.Narrative;
+                LaunchGame(m_narrativeScene.name);
+            }
+        }
+    }
+    
     public void PlayGame()
     {
-        SceneManager.LoadScene(m_gameScene.name);
+        CurrentGameMode = GameMode.Fps;
+        SceneManager.LoadScene(m_fpsScene.name);
         ResumeGame();
     }
 
@@ -74,13 +104,16 @@ public class GameManager : MonoBehaviour
     
     public void PauseGame()
     {
-        IsPlaying = false;
-        Time.timeScale = 0;
-        m_pauseMenu.SetActive(true);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        if (CurrentGameMode != GameMode.Menu)
+        {
+            IsPlaying = false;
+            Time.timeScale = 0;
+            m_pauseMenu.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
 
-        firstSelectedSystem.SetSelected(resumePauseButton);
+            firstSelectedSystem.SetSelected(resumePauseButton);
+        }
     }
 
     public void ResumeGame()
